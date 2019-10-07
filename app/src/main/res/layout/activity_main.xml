@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/news"
+    tools:context=".MainActivity">
+
+
+
+
+    <LinearLayout
+        android:id="@+id/linear_layout"
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:background="@color/white"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:onClick="searchWord"
+            android:textColor="@color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:layout_margin="8dp"
+            android:text="@string/search"
+            android:background="@color/dark_blue"/>
+        
+        <EditText
+            android:id="@+id/edit_text"
+            android:hint="@string/enter_a_keyword"
+            android:textColor="@color/black"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp" />
+    </LinearLayout>
+
+    <ListView
+        android:layout_marginBottom="60dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginLeft="8dp"
+        android:id="@+id/list_view"
+        android:layout_below="@id/linear_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <ProgressBar
+        android:visibility="invisible"
+        android:layout_centerInParent="true"
+        android:id="@+id/progress_bar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:onClick="loadMore"
+        android:layout_alignParentBottom="true"
+        android:textColor="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_margin="8dp"
+        android:text="@string/load_more"
+        android:background="@color/dark_blue"/>
+
+
+</RelativeLayout>
