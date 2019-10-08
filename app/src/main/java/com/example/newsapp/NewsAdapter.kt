@@ -43,7 +43,7 @@ class NewsAdapter( context:Context, arrayList:ArrayList<Data>) : BaseAdapter() {
                 tittleValue?.text = arrayList[p0].webTittle
 
                 tittleValue?.setOnClickListener {
-                    val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse(arrayList[p0]))
+                    val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse(arrayList[p0].toString()))
                     context!!.startActivity(browserIntent)
                 }
 

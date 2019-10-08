@@ -1,12 +1,11 @@
 package com.example.newsapp
 
-import android.content.Context
+
 import android.os.AsyncTask
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import android.widget.ProgressBar
 import kotlinx.android.synthetic.main.activity_main.*
 import org.json.JSONException
 import org.json.JSONObject
@@ -23,7 +22,7 @@ import java.nio.charset.Charset
 
 class MainActivity : AppCompatActivity() {
 
-    var ProgressBar = progress_bar
+
     var listData = ArrayList<Data>()
     var pageNumber = 1
 
@@ -79,7 +78,7 @@ class MainActivity : AppCompatActivity() {
         var urlConection : HttpURLConnection? = null
         var inputStream : InputStream? = null
         try {
-            urlConection = url?.openConnection() as HttpURLConnection
+            urlConection = url!!.openConnection() as HttpURLConnection
             urlConection.requestMethod = "GET"
             urlConection.setRequestProperty("Accept","Application/json")
             urlConection.setRequestProperty("api-key","2651ce40-7e01-49a2-929c-ea9bc2e85e6c")
@@ -120,7 +119,7 @@ class MainActivity : AppCompatActivity() {
             url = URL(stringUrl)
        }catch (e: MalformedURLException){
            Log.e("MainActivity", "Error in creating url$e")
-           return null
+
       }
        return null
    }
